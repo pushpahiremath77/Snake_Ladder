@@ -8,7 +8,7 @@ def repeat_roll():
         if choice==1:
             if position + dice <= 100:
                 position+=dice
-                print(f"Rolled {dice}, moved forward. Position: {position}")
+                print(f"Ladder:Rolled {dice}, moved forward. Position: {position}")
             else:
                 print(f"Rolled {dice}, but move exceeds 100. Staying at position: {position}")
         
@@ -17,16 +17,10 @@ def repeat_roll():
 
             if position<0:
                 position=0
-            print(f"Rolled {dice}, moved backward. Position: {position}")
+            print(f"Snake:Rolled {dice}, moved backward. Position: {position}")
 
         else:
-            print(f"Staying in same position: {position}")
+            print(f"No Play:Staying in same position: {position}")
     print(f"Player reached the winning position: {position}")
 
 repeat_roll()
-
-
-
-
-
-
