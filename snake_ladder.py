@@ -1,4 +1,4 @@
-import random
+
 def uc5():
     position = 0
     while position != 100:
