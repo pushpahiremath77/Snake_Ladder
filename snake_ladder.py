@@ -1,26 +1,25 @@
 import random
-def repeat_roll():
-    position=0
-    while(position!=100):
-        dice=random.randint(1,6)
-        choice=random.randint(1,3)
+def uc5():
+    position = 0
+    while position != 100:
+        dice_roll = random.randint(1, 6)
+        option = random.randint(1, 3)
 
-        if choice==1:
-            if position + dice <= 100:
-                position+=dice
-                print(f"Ladder:Rolled {dice}, moved forward. Position: {position}")
-            else:
-                print(f"Rolled {dice}, but move exceeds 100. Staying at position: {position}")
+        if option == 1: 
+            print(f"No Play : Dice rolled: {dice_roll}, Position: {position}")            
+            pass
+        elif option == 2:  
+            position += dice_roll
+            print(f"Ladder:Ladder : Dice rolled: {dice_roll}, Position: {position}")
+        else:  
+            position -= dice_roll
+            print(f"Snake : Dice rolled: {dice_roll}, Position: {position}")
         
-        elif choice==2:
-            position-=dice
+        if position < 0:
+            position = 0
+        if position > 100:
+            position -= dice_roll
+        
+    print(f"Player reached position {position}!!!")
 
-            if position<0:
-                position=0
-            print(f"Snake:Rolled {dice}, moved backward. Position: {position}")
-
-        else:
-            print(f"No Play:Staying in same position: {position}")
-    print(f"Player reached the winning position: {position}")
-
-repeat_roll()
+uc5()
